@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "public/profilePicture")));
 app.use(express.static(path.join(__dirname, "public/profilePicture/b&w")));
 
-app.use(express.static("../frontend/build"));
+app.use(express.static("./frontend/build"));
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "frontend", "build","index.html"));
 });
