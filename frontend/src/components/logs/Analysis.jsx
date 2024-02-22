@@ -136,11 +136,12 @@ function Analysis() {
             label="project"
             onChange={(e) => handleChange(e, "project")}
           >
-            {projects.map((project) => (
-              <MenuItem key={project._id} value={project._id}>
-                {project.name}
-              </MenuItem>
-            ))}
+            {projects &&
+              projects?.map((project) => (
+                <MenuItem key={project._id} value={project._id}>
+                  {project.name}
+                </MenuItem>
+              ))}
           </Select>
         </FormControl>
         <FormControl className="col" fullWidth>
@@ -152,11 +153,12 @@ function Analysis() {
             label="module"
             onChange={(e) => handleChange(e, "module")}
           >
-            {modules.map((module) => (
-              <MenuItem key={module._id} value={module._id}>
-                {module.moduleName}
-              </MenuItem>
-            ))}
+            {modules &&
+              modules?.map((module) => (
+                <MenuItem key={module._id} value={module._id}>
+                  {module.moduleName}
+                </MenuItem>
+              ))}
           </Select>
         </FormControl>
         <Button

@@ -55,7 +55,7 @@ export default function LogsTable() {
 
     return (
       <List dense>
-        {tasks.map((task, index) => {
+        {tasks?.map((task, index) => {
           totalResearch += task.research;
           totalMeeting += task.meeting;
           totalDevelopment += task.development;
@@ -89,7 +89,7 @@ export default function LogsTable() {
 
   return (
     <Box mt={5} mb={5}>
-      {projects.map((project) => (
+      {projects?.map((project) => (
         <Accordion
           key={project._id}
           expanded={expandedProject === project._id}
@@ -130,7 +130,7 @@ export default function LogsTable() {
             </Box>
           </AccordionSummary>
           <AccordionDetails>
-            {project.modules.map((module) => (
+            {project?.modules?.map((module) => (
               <Accordion
                 key={module.moduleName}
                 expanded={expandedModule === module.moduleName}
