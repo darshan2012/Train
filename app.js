@@ -29,10 +29,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "public/profilePicture")));
 app.use(express.static(path.join(__dirname, "public/profilePicture/b&w")));
 
-app.use(express.static("./frontend/build"));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "frontend/build","index.html"));
-});
 const cors = require("cors");
 app.use(cors());
 
@@ -45,6 +41,11 @@ app.use("/companies/v1", companyRouter);
 app.use("/analysis/v1", analysisRouter);
 app.use("/openai/v1", chatRouter);
 app.use("/projects/v1", projectRouter);
+
+app.use(express.static("./frontend/build"));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "frontend/build", "index.html"));
+});
 
 // catch 404 and forward to error handler
 app.use("*", function (req, res, next) {
