@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, "public/profilePicture/b&w")));
 const cors = require("cors");
 app.use(cors());
 
-app.use("/", indexRouter);
+// app.use("/", indexRouter);
 app.use("/users/v1", usersRouter);
 app.use("/image/v1", imageRouter);
 app.use("/states/v1", stateRouter);
